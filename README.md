@@ -1,7 +1,7 @@
-# Личный проект «{{projectTitle}}»
+# Личный проект «Шесть городов»
 
-* Студент: [{{userName}}]({{userProfile}}).
-* Наставник: `Неизвестно`.
+* Студент: [Елена Есина](https://up.htmlacademy.ru/profession/frontender-crct-angular/1/angular-individual/1/user/261907).
+* Наставник: [Алексей Васильев](https://up.htmlacademy.ru/profession/frontender-crct-angular/1/angular-individual/1/user/1353249).
 
 ---
 
