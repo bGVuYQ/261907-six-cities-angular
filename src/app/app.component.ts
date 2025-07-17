@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Offers } from '../mocks/offer';
-import { MainScreenComponent } from './main-screen/main-screen.component';
+import { Offers } from './mocks/offer';
+import { MainComponent } from './pages/main/main.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MainScreenComponent],
+  imports: [RouterOutlet, MainComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

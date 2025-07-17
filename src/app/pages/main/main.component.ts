@@ -1,13 +1,13 @@
 import { Component, input } from '@angular/core';
-import { OfferCardComponent } from '../offer-card/offer-card.component';
+import { OfferCardComponent } from '../../common/offer-card/offer-card.component';
 
 @Component({
-  selector: 'app-main-screen',
+  selector: 'app-main',
   imports: [OfferCardComponent],
-  templateUrl: './main-screen.component.html'
+  templateUrl: './main.component.html'
 })
 
-export class MainScreenComponent {
+export class MainComponent {
   offersCount = input<number>();
   offersPerPage = input<number>();
 
