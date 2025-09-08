@@ -1,0 +1,33 @@
+.page {
+  display: flex;
+  flex-direction: column;
+
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+
+.cities {
+  display: flex;
+  flex-grow: 1;
+  overflow-y: hidden;
+
+  background-color: #fff;
+}
+
+.cities .container {
+  display: flex;
+
+  padding-right: 0;
+}
+
+.right-section {
+  display: flex;
+
+  flex-grow: 1;
+}

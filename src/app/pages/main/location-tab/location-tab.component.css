@@ -1,0 +1,50 @@
+li {
+  display: block;
+
+  margin-right: 36px;
+  margin-bottom: 19px;
+}
+
+a {
+  display: block;
+
+  padding: 9px 21px 6px 11px;
+
+  font-size: 19px;
+  font-weight: 300;
+  font-style: oblique;
+  line-height: 1.211;
+
+  border-radius: 3px;
+
+  transform: skew(-15deg);
+
+  transition:
+    background 0.3s,
+    color 0.3s,
+    text-shadow 0.3s;
+}
+
+a:hover,
+a:focus {
+  text-shadow:
+    1px 0 0,
+    0.5px 0 0,
+    -1px 0 0;
+}
+
+.active {
+  text-shadow:
+    1px 0 0,
+    0.5px 0 0,
+    -1px 0 0;
+
+  color: #fff;
+  background-color: #4481c3;
+}
+
+span {
+  display: block;
+
+  transform: skew(15deg);
+}

@@ -1,0 +1,31 @@
+:host {
+  align-self: stretch;
+
+  width: 100%;
+}
+
+.cities {
+  height: 100%;
+
+  background-image: url('../../../../public/img/map.jpg');
+  background-position: -170px center;
+  background-repeat: no-repeat;
+  background-size: 682px auto;
+}
+
+@media
+  (-webkit-min-device-pixel-ratio:1.5),
+  (min-resolution:144dpi),
+  (min-resolution:1.5dppx) {
+  .cities {
+    background-image: url('../../../../public/img/map@2x.jpg');
+    background-size: 682px 794px;
+  }
+}
+
+@media (min-height:980px) {
+  .cities {
+    background-size: cover;
+  }
+}
+
