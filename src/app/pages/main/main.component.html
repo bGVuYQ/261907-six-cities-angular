@@ -1,0 +1,22 @@
+<div class="page  gray">
+  <app-header [shouldRenderUserInfo]="true" />
+
+  <main>
+    <h1 class="visually-hidden">Cities</h1>
+    <div class="tabs">
+      <section class="locations  container">
+        <app-locations-list />
+      </section>
+    </div>
+    <div class="cities">
+      <div class="container">
+        @if (offersCount()) {
+          <app-city-offers [offersCount]="offersCount()" [offersPerPage]="offersPerPage()" [className]="className" />
+        }
+        <div class="right-section">
+          <app-map [className]="mapClass"/>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

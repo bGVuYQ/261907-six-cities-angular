@@ -1,0 +1,25 @@
+.button {
+  flex-shrink: 0;
+
+  width: 18px;
+  height: 19px;
+  margin-top: 2px;
+}
+
+svg {
+  fill: none;
+  stroke: #979797;
+  stroke-width: 2;
+
+  transition: fill .3s, stroke .3s
+}
+
+.button:focus svg,
+.button:hover svg {
+  stroke: #4481c3;
+}
+
+.button.active svg {
+  fill: #4481c3;
+  stroke: #4481c3;
+}

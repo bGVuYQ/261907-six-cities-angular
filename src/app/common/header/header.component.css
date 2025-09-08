@@ -1,0 +1,6 @@
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+
+  padding: 19px 16px 0;
+}

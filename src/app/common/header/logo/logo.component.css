@@ -1,0 +1,13 @@
+:host {
+  flex-shrink: 0;
+  margin-right: auto;
+}
+
+div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+a {
+  margin-bottom: 15px;
+}
