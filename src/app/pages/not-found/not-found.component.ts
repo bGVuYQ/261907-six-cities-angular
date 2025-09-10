@@ -2,17 +2,16 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { faker } from '@faker-js/faker';
 import { CITIES } from '../../../const';
 import { HeaderComponent } from '../../common/header/header.component';
-import { LoginFormComponent } from './login-form/login-form.component';
 import { LinkToCityComponent } from '../../common/link-to-city/link-to-city.component';
 
 @Component({
-  selector: 'app-login',
-  imports: [HeaderComponent, LoginFormComponent, LinkToCityComponent],
+  selector: 'app-not-found',
+  imports: [HeaderComponent, LinkToCityComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  templateUrl: './not-found.component.html',
+  styleUrl: './not-found.component.css'
 })
 
-export class LoginComponent {
+export class NotFoundComponent {
   public city = CITIES[faker.number.int(CITIES.length - 1)];
 }

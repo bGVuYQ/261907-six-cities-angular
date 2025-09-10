@@ -1,3 +1,30 @@
 import { Routes } from '@angular/router';
+import { AppRoute } from '../const';
+import { MainComponent } from './pages/main/main.component';
+import { LoginComponent } from './pages/login/login.component';
+import { FavoritesComponent } from './pages/favorites/favorites.component';
+import { OfferComponent } from './pages/offer/offer.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+  {
+    path: AppRoute.Main,
+    component: MainComponent
+  },
+  {
+    path: AppRoute.Login,
+    component: LoginComponent
+  },
+  {
+    path: AppRoute.Favorites,
+    component: FavoritesComponent
+  },
+  {
+    path: `${AppRoute.Offer}/:id`,
+    component: OfferComponent
+  },
+  {
+    path: '**',
+    component: NotFoundComponent
+  }
+];

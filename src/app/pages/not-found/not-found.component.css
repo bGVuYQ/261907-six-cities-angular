@@ -1,0 +1,22 @@
+main {
+  display: flex;
+
+  flex-grow: 1;
+}
+
+.container {
+  display: flex;
+}
+
+h1 {
+  position: relative;
+  z-index: 1;
+
+  margin-top: 0;
+  margin-bottom: 28px;
+
+  font-size: 32px;
+  font-weight: 700;
+  font-style: oblique;
+  line-height: 1.1875;
+}

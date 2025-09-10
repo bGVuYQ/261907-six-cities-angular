@@ -12,7 +12,16 @@ import { BookmarkButtonComponent } from '../bookmark-button/bookmark-button.comp
 
 export class OfferCardComponent {
   public className = input<CardClass>();
-  public imageWidth = this.className() !== CardClass.Favorites ? 260 : 150;
-  public imageHeight = this.className() !== CardClass.Favorites ? 200 : 100;
   public bookmarkClass = BookMarkButtonClass.PlaceCard;
+
+  get sizes() {
+    return {
+      width: this.isFavorite() ? 150 : 260,
+      heigth: this.isFavorite() ? 110 : 200
+    }
+  }
+
+  isFavorite() {
+    return this.className() === CardClass.Favorites;
+  }
 }

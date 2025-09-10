@@ -1,0 +1,12 @@
+<li>
+  <div class="locations  current-locations">
+    <div>
+      <app-link-to-city [city]="city()" [isActive]="true" />
+    </div>
+  </div>
+  <div>
+    @for (offer of offers; track offer) {
+      <app-offer-card [className]="className" />
+    }
+  </div>
+</li>

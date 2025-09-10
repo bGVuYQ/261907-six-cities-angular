@@ -1,0 +1,32 @@
+form {
+  position: relative;
+  z-index: 1;
+
+  width: 341px;
+}
+
+.input-wrapper {
+  margin-right: 2px;
+}
+
+input {
+  width: 100%;
+  padding: 15px 14px 13px;
+  margin-bottom: 24px;
+
+  font-size: 16px;
+  line-height: 1.1875;
+
+  color: #383838;
+  background-color: #fff;
+
+  border: 1px solid #e6e6e6;
+  border-radius: 2px;
+}
+
+input::placeholder {
+  font-size: 16px;
+  line-height: 1.1875;
+
+  color: #818181;
+}

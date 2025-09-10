@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CardClass, MapClass } from '../../../const';
+import { Offers } from '../../mocks/offer';
 import { HeaderComponent } from '../../common/header/header.component';
 import { LocationsListComponent } from './locations-list/locations-list.component';
 import { CityOffersComponent } from './city-offers/city-offers.component';
@@ -14,8 +15,8 @@ import { MapComponent } from '../../common/map/map.component';
 })
 
 export class MainComponent {
-  public offersCount = input<number>();
-  public offersPerPage = input<number>();
+  public offersCount = Offers.Count;
+  public offersPerPage = Offers.PerPage;
   public className = CardClass.Cities;
   public mapClass = MapClass.Cities;
 }

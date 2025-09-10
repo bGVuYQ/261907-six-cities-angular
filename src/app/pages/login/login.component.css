@@ -1,42 +1,9 @@
-.page {
+main {
   display: flex;
-  flex-direction: column;
-  overflow: hidden;
 
-  width: 1144px;
-  height: 100vh;
-  margin-left: auto;
-  margin-right: auto;
-
-  background-image:
-    linear-gradient(to right, #f5f5f5 509px, transparent 509px),
-    url('../img/amsterdam.jpg');
-  background-position:
-    top left,
-    right top;
-  background-repeat:
-    no-repeat,
-    no-repeat;
-  background-size:
-    auto,
-    auto 100%;
+  flex-grow: 1;
 }
 
-@media
-  (-webkit-min-device-pixel-ratio:1.5),
-  (min-resolution:144dpi),
-  (min-resolution:1.5dppx) {
-  .page {
-    background-image:
-      linear-gradient(to right, #f5f5f5 509px, transparent 509px),
-      url('../img/amsterdam@2x.jpg');
-  }
-}
-
-@media (max-height:720px) {
-  .page {
-    background-size:
-      auto,
-      auto 715px;
-  }
+.container {
+  display: flex;
 }

@@ -149,6 +149,49 @@ img {
   background-color: #f5f5f5;
 }
 
+.with-picture {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  width: 1144px;
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+
+  background-image:
+    linear-gradient(to right, #f5f5f5 509px, transparent 509px),
+    url('../public/img/amsterdam.jpg');
+  background-position:
+    top left,
+    right top;
+  background-repeat:
+    no-repeat,
+    no-repeat;
+  background-size:
+    auto,
+    auto 100%;
+}
+
+@media
+  (-webkit-min-device-pixel-ratio:1.5),
+  (min-resolution:144dpi),
+  (min-resolution:1.5dppx) {
+  .with-picture {
+    background-image:
+      linear-gradient(to right, #f5f5f5 509px, transparent 509px),
+      url('../public/img/amsterdam@2x.jpg');
+  }
+}
+
+@media (max-height:720px) {
+  .with-picture {
+    background-size:
+      auto,
+      auto 715px;
+  }
+}
+
 .stars {
   position: relative;
 
@@ -187,3 +230,84 @@ img {
 
   background: url('../public/img/stars-active.svg') center no-repeat transparent;
 }
+
+.submit {
+  padding: 16px 20px 13px;
+
+  color: #fff;
+  background-color: #4481c3;
+
+  border-radius: 3px;
+}
+
+.submit:focus,
+.submit:hover {
+  background-color: #3069a6;
+}
+
+.button:disabled {
+  background-color: #c7c7c7;
+}
+
+.locations li,
+.locations div {
+  display: block;
+
+  margin-right: 36px;
+  margin-bottom: 19px;
+}
+
+.current-locations div {
+  margin: 0;
+}
+
+.locations-with-picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-grow: 1;
+  padding: 0 51px 63px 130px;
+}
+
+.form {
+  position: relative;
+
+  width: 520px;
+  padding-top: 19.6vh;
+  padding-right: 60px;
+  padding-left: 13px;
+}
+
+.form::after {
+  position: absolute;
+  right: -2px;
+  bottom: 0;
+
+  width: 12.03vh;
+  min-width: 195px;
+  height: 100vh;
+  min-height: 450px;
+
+  content: '';
+
+  background-color: #f5f5f5;
+
+  border-right: 6px solid #4481c3;
+
+  transform: skew(-6.5deg);
+}
+
+.form h1 {
+  position: relative;
+  z-index: 1;
+
+  margin-top: 0;
+  margin-bottom: 28px;
+
+  font-size: 32px;
+  font-weight: 700;
+  font-style: oblique;
+  line-height: 1.1875;
+}
+

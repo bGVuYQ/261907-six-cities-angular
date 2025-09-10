@@ -11,7 +11,6 @@ import { OfferCardComponent } from '../offer-card/offer-card.component';
 })
 
 export class OffersListComponent {
-  public offersCount = input<number>();
   public offersPerPage = input<number>();
   public className = input<CardClass>();
 
