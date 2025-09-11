@@ -1,0 +1,80 @@
+li {
+  display: flex;
+  align-items: flex-start;
+
+  margin-bottom: 22px;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  max-width: 54px;
+  margin-right: 22px;
+}
+
+.avatar-wrapper {
+  width: 54px;
+  min-width: 54px;
+  height: 54px;
+  margin-bottom: 10px;
+}
+
+.avatar {
+  display: block;
+
+  border-radius: 50%;
+}
+
+.name {
+  font-size: 14px;
+  line-height: 1.2143;
+  word-break: break-word;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+
+  color: #000;
+}
+
+.rating {
+  margin-bottom: 7px;
+}
+
+.stars {
+  width: 98px;
+  height: 16px;
+}
+
+.stars::before {
+  width: 98px;
+
+  background-size: 98px 16px;
+}
+
+.stars span {
+  width: 0%;
+}
+
+.stars span::before {
+  width: 98px;
+
+  background-size: 98px 16px;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 5px;
+
+  font-size: 16px;
+  line-height: 1.75;
+
+  color: #000;
+}
+
+time {
+  font-size: 14px;
+  line-height: 1;
+
+  color: #5d5d5d;
+}

@@ -10,6 +10,15 @@ import { BookMarkButtonClass } from '../../../const';
 
 export class BookmarkButtonComponent {
   public className = input<BookMarkButtonClass>();
-  public bookmarkWidth = this.className() === BookMarkButtonClass.Offer ? 31 : 18;
-  public bookmarkHeight = this.className() === BookMarkButtonClass.Offer ? 33 : 19;
+
+  get sizes() {
+    return {
+      width: this.isOffer() ? 31 : 18,
+      heigth: this.isOffer() ? 33 : 19
+    }
+  }
+
+  isOffer() {
+    return this.className() === BookMarkButtonClass.Offer;
+  }
 }

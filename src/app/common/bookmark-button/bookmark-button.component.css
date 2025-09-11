@@ -1,9 +1,27 @@
 .button {
+  margin-top: 2px;
+}
+
+:host-context(article) .button {
   flex-shrink: 0;
 
   width: 18px;
   height: 19px;
-  margin-top: 2px;
+}
+
+:host-context(.favorite) .button {
+  margin-top: 0;
+
+  transform: skew(10deg);
+}
+
+:host-context(.offer-container) .button {
+  position: absolute;
+  top: 41px;
+  right: 93px;
+  width: 31px;
+
+  height: 33px;
 }
 
 svg {

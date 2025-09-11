@@ -10,6 +10,25 @@ article:hover {
   opacity: 0.6;
 }
 
+.favorite {
+  display: flex;
+  align-items: flex-start;
+
+  width: 421px;
+  margin-bottom: 32px;
+  margin-left: 0;
+}
+
+:host-context(.near-places) article {
+  width: 260px;
+  margin-left: 8px;
+  margin-bottom: 24px;
+}
+
+:host:last-child .favorite {
+  margin-bottom: 0;
+}
+
 .mark {
   position: absolute;
   top: -5px;
@@ -37,6 +56,12 @@ article:hover {
 
 .image-wrapper {
   margin-bottom: 9px;
+}
+
+.favorite .image-wrapper {
+  min-width: 150px;
+  margin-right: 16px;
+  margin-bottom: 0;
 }
 
 img {
