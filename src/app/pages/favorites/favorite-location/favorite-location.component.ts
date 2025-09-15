@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { CardClass } from '../../../../const';
-import { Offers } from '../../../mocks/offer';
+import { Offers } from '../../../mocks/offers';
 import { LinkToCityComponent } from '../../../common/link-to-city/link-to-city.component';
 import { OfferCardComponent } from '../../../common/offer-card/offer-card.component';
 

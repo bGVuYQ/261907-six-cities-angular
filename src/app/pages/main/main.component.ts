@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CardClass, MapClass } from '../../../const';
-import { Offers } from '../../mocks/offer';
+import { Offers } from '../../mocks/offers';
 import { HeaderComponent } from '../../common/header/header.component';
 import { LocationsListComponent } from './locations-list/locations-list.component';
 import { CityOffersComponent } from './city-offers/city-offers.component';
