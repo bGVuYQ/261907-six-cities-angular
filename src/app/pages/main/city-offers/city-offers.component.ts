@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { CardClass } from '../../../../const';
+import { Offer } from '../../../types/offer';
 import { SortComponent } from '../sort/sort.component';
 import { OffersListComponent } from '../../../common/offers-list/offers-list.component';
 
@@ -12,7 +13,6 @@ import { OffersListComponent } from '../../../common/offers-list/offers-list.com
 })
 
 export class CityOffersComponent {
-  public offersCount = input<number>();
-  public offersPerPage = input<number>();
-  public className = input<CardClass>();
+  public offers = input.required<Offer[]>();
+  public className = input.required<CardClass>();
 }

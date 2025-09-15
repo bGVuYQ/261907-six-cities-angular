@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { CardClass } from '../../../const';
+import { Offer } from '../../types/offer';
 import { OfferCardComponent } from '../offer-card/offer-card.component';
 
 @Component({
@@ -11,10 +12,6 @@ import { OfferCardComponent } from '../offer-card/offer-card.component';
 })
 
 export class OffersListComponent {
-  public offersPerPage = input<number>();
-  public className = input<CardClass>();
-
-  get offers() {
-    return Array.from(Array(this.offersPerPage()).keys());
-  }
+  public offers = input.required<Offer[]>();
+  public className = input.required<CardClass>();
 }

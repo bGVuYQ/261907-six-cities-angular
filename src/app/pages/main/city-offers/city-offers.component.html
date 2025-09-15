@@ -1,6 +1,6 @@
 <section>
   <h2 class="visually-hidden">Places</h2>
-  <b>{{ offersCount() }} places to stay in Amsterdam</b>
+  <b>{{ offers().length }} places to stay in Amsterdam</b>
   <app-sort />
-  <app-offers-list [offersPerPage]="offersPerPage()" [className]="className()" />
+  <app-offers-list [offers]="offers()" [className]="className()" />
 </section>

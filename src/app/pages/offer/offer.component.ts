@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { faker } from '@faker-js/faker';
-import { MAX_IMAGES_TO_RENDER_IN_OFFER, MAX_NEAR_PLACES_TO_RENDER, MAX_REVIEWS_TO_RENDER, BookMarkButtonClass, CardClass, MapClass } from '../../../const';
+import { MAX_IMAGES_TO_RENDER_IN_OFFER, MAX_REVIEWS_TO_RENDER, BookMarkButtonClass, CardClass, MapClass } from '../../../const';
+import { offers } from '../../mocks/offers';
 import { HeaderComponent } from '../../common/header/header.component';
 import { BookmarkButtonComponent } from '../../common/bookmark-button/bookmark-button.component';
 import { ReviewsListComponent } from './reviews-list/reviews-list.component';
@@ -20,7 +21,7 @@ export class OfferComponent {
   public bookmarkClass = BookMarkButtonClass.Offer;
   public mapClass = MapClass.Offer;
   public className = CardClass.NearPlaces;
-  public maxNearPlaces = MAX_NEAR_PLACES_TO_RENDER;
+  public offers = offers;
 
   get goods() {
     return Array.from(Array(faker.number.int(10)).keys());

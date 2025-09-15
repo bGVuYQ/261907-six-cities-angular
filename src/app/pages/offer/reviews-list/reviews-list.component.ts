@@ -10,5 +10,5 @@ import { ReviewCardComponent } from '../review-card/review-card.component';
 })
 
 export class ReviewsListComponent {
-  public reviews = input<number[]>();
+  public reviews = input.required<number[]>();
 }

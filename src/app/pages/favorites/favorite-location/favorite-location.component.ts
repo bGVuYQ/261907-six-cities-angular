@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { CardClass } from '../../../../const';
-import { Offers } from '../../../mocks/offers';
+import { offers } from '../../../mocks/offers';
 import { LinkToCityComponent } from '../../../common/link-to-city/link-to-city.component';
 import { OfferCardComponent } from '../../../common/offer-card/offer-card.component';
 
@@ -13,11 +13,7 @@ import { OfferCardComponent } from '../../../common/offer-card/offer-card.compon
 })
 
 export class FavoriteLocationComponent {
-  public city = input<string>();
-  public offersPerPage = Offers.PerPage;
+  public city = input.required<string>();
+  public offers = offers;
   public className = CardClass.Favorites;
-
-  get offers() {
-    return Array.from(Array(this.offersPerPage).keys());
-  }
 }

@@ -14,5 +14,5 @@ import { FavoriteLocationComponent } from './favorite-location/favorite-location
 
 export class FavoritesComponent {
   public cities = CITIES;
-  public routeToMain = AppRoute.Main;
+  public routeToMain = `/${AppRoute.Main}`;
 }

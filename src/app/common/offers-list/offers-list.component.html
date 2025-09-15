@@ -1,5 +1,5 @@
 <div>
-  @for (offer of offers; track offer) {
-    <app-offer-card [className]="className()" />
+  @for (offer of offers(); track offer.id) {
+    <app-offer-card [offer]="offer" [className]="className()" />
   }
 </div>

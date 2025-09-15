@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { AppRoute, BookMarkButtonClass, CardClass } from '../../../const';
+import { MAX_RATING, AppRoute, BookMarkButtonClass, CardClass } from '../../../const';
+import { Offer } from '../../types/offer';
 import { BookmarkButtonComponent } from '../bookmark-button/bookmark-button.component';
 
 @Component({
@@ -12,8 +13,9 @@ import { BookmarkButtonComponent } from '../bookmark-button/bookmark-button.comp
 })
 
 export class OfferCardComponent {
-  public routeToOffer = AppRoute.Offer;
-  public className = input<CardClass>();
+  public offer = input.required<Offer>();
+  public className = input.required<CardClass>();
+  public routeToOffer = `/${AppRoute.Offer}`;
   public bookmarkClass = BookMarkButtonClass.PlaceCard;
 
   get sizes() {
@@ -21,6 +23,14 @@ export class OfferCardComponent {
       width: this.isFavorite() ? 150 : 260,
       heigth: this.isFavorite() ? 110 : 200
     }
+  }
+
+  applyRatingStyle(rating: number) {
+    return `width: ${100 / MAX_RATING * Math.round(rating)}%`;
+  }
+
+  capitalize(word: string) {
+    return `${word.charAt(0).toUpperCase()}${word.slice(1).toLowerCase()}`;
   }
 
   isFavorite() {

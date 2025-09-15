@@ -102,7 +102,7 @@ export const offers: Offer[] = [
     isFavorite: false,
     isPremium: true,
     rating: 1,
-    previewImage: 'https://images.wallpaperscraft.com/image/single/city_china_house_807_1024x768.jpg',
+    previewImage: 'https://images.wallpaperscraft.com/image/single/pagoda_building_tower_1373560_1024x768.jpg',
     description: 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
     bedrooms: 50,
     goods: [
@@ -121,7 +121,7 @@ export const offers: Offer[] = [
       isPro: true
     },
     images: [
-      'https://images.wallpaperscraft.com/image/single/city_china_house_807_1024x768.jpg'
+      'https://images.wallpaperscraft.com/image/single/pagoda_building_tower_1373560_1024x768.jpg'
     ],
     maxAdults: 10
   },
@@ -146,7 +146,7 @@ export const offers: Offer[] = [
     isFavorite: true,
     isPremium: false,
     rating: 3,
-    previewImage: 'https://images.wallpaperscraft.com/image/single/hotel_room_bed_39745_1024x768.jpg',
+    previewImage: 'https://images.wallpaperscraft.com/image/single/pagodas_architecture_trees_1335635_1024x768.jpg',
     description: 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
     bedrooms: 1,
     goods: [
@@ -158,7 +158,7 @@ export const offers: Offer[] = [
       isPro: true
     },
     images: [
-      'https://images.wallpaperscraft.com/image/single/hotel_room_bed_39745_1024x768.jpg'
+      'https://images.wallpaperscraft.com/image/single/pagodas_architecture_trees_1335635_1024x768.jpg'
     ],
     maxAdults: 3
   }
