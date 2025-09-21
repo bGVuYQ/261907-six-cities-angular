@@ -1,5 +1,5 @@
 <ul>
-  @for (review of reviews(); track review) {
-    <app-review-card />
+  @for (review of reviews(); track review.id) {
+    <app-review-card [review]="review"/>
   }
 </ul>

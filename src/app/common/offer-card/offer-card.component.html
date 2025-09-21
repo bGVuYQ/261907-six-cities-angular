@@ -6,7 +6,7 @@
   }
   <div class="image-wrapper">
     <a [routerLink]="[routeToOffer, offer().id]">
-      <img [src]="offer().previewImage" [width]="sizes.width" [height]="sizes.heigth" alt="Place image" />
+      <img [src]="offer().previewImage" [width]="sizes.width" [height]="sizes.height" alt="Place image" />
     </a>
   </div>
   <div class="info">
@@ -15,7 +15,7 @@
         <b>&euro;{{ offer().price }}</b>
         <span class="price-text">&#47;&nbsp;night</span>
       </div>
-      <app-bookmark-button [className]="bookmarkClass" />
+      <app-bookmark-button [className]="bookmarkClass" [isActive]="offer().isFavorite" />
     </div>
     <div class="rating">
       <div class="stars">

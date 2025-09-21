@@ -1,18 +1,18 @@
 <li>
   <div class="user">
     <div class="avatar-wrapper">
-      <img class="avatar" src="img/avatar-max.jpg" width="54" height="54" alt="Reviews avatar">
+      <img class="avatar" [src]="review().user.avatarUrl" width="54" height="54" alt="Reviews avatar">
     </div>
-    <span class="name">Max</span>
+    <span class="name">{{ review().user.name }}</span>
   </div>
   <div class="info">
     <div class="rating">
       <div class="stars">
-        <span style="width: 80%"></span>
+        <span [style]="applyRatingStyle(review().rating)"></span>
         <span class="visually-hidden">Rating</span>
       </div>
     </div>
-    <p>A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.</p>
-    <time datetime="2019-04-24">April 2019</time>
+    <p>{{ review().comment }}</p>
+    <time [dateTime]="review().date">{{ formatDate(review().date) }}</time>
   </div>
 </li>

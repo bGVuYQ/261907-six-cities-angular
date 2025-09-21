@@ -21,7 +21,7 @@ export class OfferCardComponent {
   get sizes() {
     return {
       width: this.isFavorite() ? 150 : 260,
-      heigth: this.isFavorite() ? 110 : 200
+      height: this.isFavorite() ? 110 : 200
     }
   }
 

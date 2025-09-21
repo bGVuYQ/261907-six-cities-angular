@@ -1,5 +1,5 @@
-<button class="button" type="button">
-  <svg [attr.width]="sizes.width" [attr.height]="sizes.heigth">
+<button class="button" [class.active]="isActive()" type="button">
+  <svg [attr.width]="sizes.width" [attr.height]="sizes.height">
     <use xlink:href="#icon-bookmark"></use>
   </svg>
   <span class="visually-hidden">To bookmarks</span>
