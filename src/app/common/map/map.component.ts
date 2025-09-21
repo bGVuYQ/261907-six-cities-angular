@@ -9,5 +9,5 @@ import { MapClass } from '../../../const';
 })
 
 export class MapComponent {
-  public className = input<MapClass>();
+  public className = input.required<MapClass>();
 }

@@ -10,8 +10,8 @@
     </div>
     <div class="cities">
       <div class="container">
-        @if (offersCount) {
-          <app-city-offers [offersCount]="offersCount" [offersPerPage]="offersPerPage" [className]="className" />
+        @if (offers.length) {
+          <app-city-offers [offers]="offers" [className]="className" (highlightMapEvent)="highlightMap($event)" (resetMapEvent)="resetMap()" />
         }
         <div class="right-section">
           <app-map [className]="mapClass"/>

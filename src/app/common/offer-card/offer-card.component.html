@@ -1,29 +1,31 @@
-<article [class.favorite]="isFavorite()">
-  <div class="mark">
-    <span>Premium</span>
-  </div>
+<article [class.favorite]="isFavorite()" (mouseenter)="highlightMap()" (mouseleave)="resetMap()">
+  @if (offer().isPremium) {
+    <div class="mark">
+      <span>Premium</span>
+    </div>
+  }
   <div class="image-wrapper">
-    <a [routerLink]="[routeToOffer, 456]">
-      <img src="img/apartment-01.jpg" [width]="sizes.width" [height]="sizes.heigth" alt="Place image" />
+    <a [routerLink]="[routeToOffer, offer().id]">
+      <img [src]="offer().previewImage" [width]="sizes.width" [height]="sizes.height" alt="Place image" />
     </a>
   </div>
   <div class="info">
     <div class="price-wrapper">
       <div class="price">
-        <b>&euro;120</b>
+        <b>&euro;{{ offer().price }}</b>
         <span class="price-text">&#47;&nbsp;night</span>
       </div>
-      <app-bookmark-button [className]="bookmarkClass" />
+      <app-bookmark-button [className]="bookmarkClass" [isActive]="offer().isFavorite" />
     </div>
     <div class="rating">
       <div class="stars">
-        <span style="width: 80%"></span>
+        <span [style]="applyRatingStyle(offer().rating)"></span>
         <span class="visually-hidden">Rating</span>
       </div>
     </div>
     <h2>
-      <a [routerLink]="[routeToOffer, 456]">Beautiful &amp; luxurious apartment at great location</a>
+      <a [routerLink]="[routeToOffer, offer().id]">{{ offer().title }}</a>
     </h2>
-    <p>Apartment</p>
+    <p>{{ capitalize(offer().type) }}</p>
   </div>
 </article>

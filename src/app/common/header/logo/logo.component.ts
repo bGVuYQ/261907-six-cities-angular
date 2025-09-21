@@ -11,5 +11,5 @@ import { AppRoute } from '../../../../const';
 })
 
 export class LogoComponent {
-  public routeToMain = AppRoute.Main;
+  public routeToMain = `/${AppRoute.Main}`;
 }

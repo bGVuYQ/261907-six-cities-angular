@@ -11,5 +11,5 @@ import { AppRoute } from '../../../../const';
 })
 
 export class UserInfoComponent {
-  public routeToFavorites = AppRoute.Favorites;
+  public routeToFavorites = `/${AppRoute.Favorites}`;
 }

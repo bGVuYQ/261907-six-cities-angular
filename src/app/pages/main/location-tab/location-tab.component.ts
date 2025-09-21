@@ -9,5 +9,5 @@ import { LinkToCityComponent } from '../../../common/link-to-city/link-to-city.c
 })
 
 export class LocationTabComponent {
-  public city = input<string>();
+  public city = input.required<string>();
 }

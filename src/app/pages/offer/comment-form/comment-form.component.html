@@ -2,7 +2,7 @@
   <label class="title" for="review">Your review</label>
   <div class="rating">
     @for (value of rating; track value; let i = $index) {
-      <input class="visually-hidden" name="rating" [value]="maxRating - i" [id]="`${maxRating - i}-stars`" type="radio">
+      <input class="visually-hidden" name="rating" [value]="maxRating - i" [id]="`${maxRating - i}-stars`" type="radio" (change)="updateRating(maxRating - i)">
       <label [for]="`${maxRating - i}-stars`" [title]="value">
         <svg width="37" height="33">
           <use xlink:href="#icon-star"></use>
@@ -10,7 +10,7 @@
       </label>
     }
   </div>
-  <textarea id="review" name="review" placeholder="Tell how was your stay, what you like and what can be improved"></textarea>
+  <textarea id="review" name="review" placeholder="Tell how was your stay, what you like and what can be improved" (change)="updateComment($event)"></textarea>
   <div class="button-wrapper">
     <p>
       To submit review please make sure to set <span class="reviews__star">rating</span> and describe your stay with at least <b class="reviews__text-amount">50 characters</b>.

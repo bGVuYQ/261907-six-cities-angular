@@ -11,5 +11,5 @@ import { UserInfoComponent } from "./user-info/user-info.component";
 })
 
 export class HeaderComponent {
-  public shouldRenderUserInfo = input<boolean>();
+  public shouldRenderUserInfo = input<boolean>(false);
 }

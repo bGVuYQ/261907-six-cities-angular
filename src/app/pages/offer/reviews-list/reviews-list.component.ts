@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { Review } from '../../../types/review';
 import { ReviewCardComponent } from '../review-card/review-card.component';
 
 @Component({
@@ -10,5 +11,5 @@ import { ReviewCardComponent } from '../review-card/review-card.component';
 })
 
 export class ReviewsListComponent {
-  public reviews = input<number[]>();
+  public reviews = input.required<Review[]>();
 }

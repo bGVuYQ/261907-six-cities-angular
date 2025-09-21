@@ -14,6 +14,6 @@ import { LinkToCityComponent } from '../../common/link-to-city/link-to-city.comp
 })
 
 export class NotFoundComponent {
-  public routeToMain = AppRoute.Main;
+  public routeToMain = `/${AppRoute.Main}`;
   public city = CITIES[faker.number.int(CITIES.length - 1)];
 }

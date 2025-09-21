@@ -1,86 +1,91 @@
-<div class="page">
-  <app-header [shouldRenderUserInfo]="true" />
+@if (this.currentOffer) {
+  <div class="page">
+    <app-header [shouldRenderUserInfo]="true" />
 
-  <main>
-    <section>
-      <div class="gallery-container  container">
-        <div class="gallery">
-          @for (image of images; track image) {
-            <div class="image-wrapper">
-              <img src="img/room.jpg" alt="Photo studio">
-            </div>
-          }
-        </div>
-      </div>
-      <div class="offer-container  container">
-        <div class="wrapper">
-          <div class="mark">
-            <span>Premium</span>
-          </div>
-          <div>
-            <h1>Beautiful &amp; luxurious studio at great location</h1>
-            <app-bookmark-button [className]="bookmarkClass" />
-          </div>
-          <div class="rating">
-            <div class="stars">
-              <span style="width: 80%"></span>
-              <span class="visually-hidden">Rating</span>
-            </div>
-            <span class="value">4.8</span>
-          </div>
-          <ul class="features">
-            <li class="entire">Apartment</li>
-            <li class="bedrooms">3 Bedrooms</li>
-            <li class="adults">Max 4 adults</li>
-          </ul>
-          <div class="price">
-            <b class="value">&euro;120</b>
-            <span class="text">&nbsp;night</span>
-          </div>
-          <div class="inside">
-            <h2>What&apos;s inside</h2>
-            <ul>
-              @for (good of goods; track good) {
-                <li>Wi-Fi</li>
-              }
-            </ul>
-          </div>
-          <div class="host">
-            <h2>Meet the host</h2>
-            <div class="user">
-              <div class="avatar-wrapper pro">
-                <img class="avatar" src="img/avatar-angelina.jpg" width="74" height="74" alt="Host avatar">
+    <main>
+      <section>
+        <div class="gallery-container  container">
+          <div class="gallery">
+            @for (image of images; track image) {
+              <div class="image-wrapper">
+                <img [src]="image" alt="Photo studio">
               </div>
-              <span class="name">Angelina</span>
-              <span class="status">Pro</span>
-            </div>
-            <div class="description">
-              <p>A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.</p>
-              <p>An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.</p>
-            </div>
-          </div>
-          <section class="reviews">
-            <h2>
-              Reviews
-              @if (reviews.length) {
-                &nbsp;&middot;&nbsp;
-                <span>{{ reviews.length }}</span>
-              }
-            </h2>
-            @if (reviews.length) {
-              <app-reviews-list [reviews]="reviews" />
             }
-            <app-comment-form />
-          </section>
+          </div>
         </div>
-      </div>
-      <app-map [className]="mapClass" />
-    </section>
-    <div class="container">
-      <section class="near-places">
-        <h2>Other places in the neighbourhood</h2>
-        <app-offers-list [offersPerPage]="maxNearPlaces" [className]="className" />
+        <div class="offer-container  container">
+          <div class="wrapper">
+            @if (this.currentOffer.isPremium) {
+              <div class="mark">
+                <span>Premium</span>
+              </div>
+            }
+            <div>
+              <h1>{{ this.currentOffer.title }}</h1>
+              <app-bookmark-button [className]="bookmarkClass" [isActive]="this.currentOffer.isFavorite" />
+            </div>
+            <div class="rating">
+              <div class="stars">
+                <span [style]="applyRatingStyle(this.currentOffer.rating)"></span>
+                <span class="visually-hidden">Rating</span>
+              </div>
+              <span class="value">{{ this.currentOffer.rating }}</span>
+            </div>
+            <ul class="features">
+              <li class="entire">{{ capitalize(this.currentOffer.type) }}</li>
+              <li class="bedrooms">{{ this.currentOffer.bedrooms }} Bedrooms</li>
+              <li class="adults">Max {{ this.currentOffer.maxAdults }} adults</li>
+            </ul>
+            <div class="price">
+              <b class="value">&euro;{{ this.currentOffer.price }}</b>
+              <span class="text">&nbsp;night</span>
+            </div>
+            <div class="inside">
+              <h2>What&apos;s inside</h2>
+              <ul>
+                @for (good of this.currentOffer.goods; track good) {
+                  <li>{{ good }}</li>
+                }
+              </ul>
+            </div>
+            <div class="host">
+              <h2>Meet the host</h2>
+              <div class="user">
+                <div class="avatar-wrapper" [class.pro]="currentOffer.host.isPro">
+                  <img class="avatar" [src]="currentOffer.host.avatarUrl" width="74" height="74" alt="Host avatar">
+                </div>
+                <span class="name">{{ currentOffer.host.name }}</span>
+                @if (currentOffer.host.isPro) {
+                  <span class="status">Pro</span>
+                }
+              </div>
+              <div class="description">
+                <p>{{ currentOffer.description }}</p>
+              </div>
+            </div>
+            <section class="reviews">
+              <h2>
+                Reviews
+                @if (reviews.length) {
+                  &nbsp;&middot;&nbsp;
+                  <span>{{ reviews.length }}</span>
+                }
+              </h2>
+              @if (reviews.length) {
+                <app-reviews-list [reviews]="reviews" />
+              }
+              <app-comment-form />
+            </section>
+          </div>
+        </div>
+        <app-map [className]="mapClass" />
       </section>
-    </div>
-  </main>
-</div>
+      <div class="container">
+        <section class="near-places">
+          <h2>Other places in the neighbourhood</h2>
+          <app-offers-list [offers]="offers" [className]="className" />
+        </section>
+      </div>
+    </main>
+  </div>
+}

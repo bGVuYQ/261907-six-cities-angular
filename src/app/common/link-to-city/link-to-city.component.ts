@@ -11,7 +11,7 @@ import { AppRoute } from '../../../const';
 })
 
 export class LinkToCityComponent {
-  public routeToMain = AppRoute.Main;
-  public city = input<string>();
+  public routeToMain = `/${AppRoute.Main}`;
+  public city = input.required<string>();
   public isActive = input<boolean>(false);
 }

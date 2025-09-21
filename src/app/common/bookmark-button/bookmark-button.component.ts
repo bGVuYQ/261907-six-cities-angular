@@ -9,12 +9,13 @@ import { BookMarkButtonClass } from '../../../const';
 })
 
 export class BookmarkButtonComponent {
-  public className = input<BookMarkButtonClass>();
+  public className = input.required<BookMarkButtonClass>();
+  public isActive = input.required<boolean>();
 
   get sizes() {
     return {
       width: this.isOffer() ? 31 : 18,
-      heigth: this.isOffer() ? 33 : 19
+      height: this.isOffer() ? 33 : 19
     }
   }
 
