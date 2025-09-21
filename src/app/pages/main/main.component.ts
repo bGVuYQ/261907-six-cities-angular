@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, output } from '@angular/core';
 import { CardClass, MapClass } from '../../../const';
 import { offers } from '../../mocks/offers';
 import { HeaderComponent } from '../../common/header/header.component';
@@ -18,4 +18,15 @@ export class MainComponent {
   public offers = offers;
   public className = CardClass.Cities;
   public mapClass = MapClass.Cities;
+
+  readonly highlightMapEvent = output<string>();
+  readonly resetMapEvent = output<void>();
+
+  highlightMap(offerId: string) {
+    console.log(offerId);
+  }
+
+  resetMap() {
+    console.log('okay');
+  }
 }

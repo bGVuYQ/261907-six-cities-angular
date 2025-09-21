@@ -1,4 +1,4 @@
-<article [class.favorite]="isFavorite()">
+<article [class.favorite]="isFavorite()" (mouseenter)="highlightMap()" (mouseleave)="resetMap()">
   @if (offer().isPremium) {
     <div class="mark">
       <span>Premium</span>

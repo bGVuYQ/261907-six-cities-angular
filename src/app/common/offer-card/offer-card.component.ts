@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { MAX_RATING, AppRoute, BookMarkButtonClass, CardClass } from '../../../const';
 import { Offer } from '../../types/offer';
@@ -18,6 +18,9 @@ export class OfferCardComponent {
   public routeToOffer = `/${AppRoute.Offer}`;
   public bookmarkClass = BookMarkButtonClass.PlaceCard;
 
+  readonly highlightMapEvent = output<string>();
+  readonly resetMapEvent = output<void>();
+
   get sizes() {
     return {
       width: this.isFavorite() ? 150 : 260,
@@ -33,7 +36,15 @@ export class OfferCardComponent {
     return `${word.charAt(0).toUpperCase()}${word.slice(1).toLowerCase()}`;
   }
 
+  highlightMap() {
+    this.highlightMapEvent.emit(this.offer().id);
+  }
+
   isFavorite() {
     return this.className() === CardClass.Favorites;
+  }
+
+  resetMap() {
+    this.resetMapEvent.emit();
   }
 }
