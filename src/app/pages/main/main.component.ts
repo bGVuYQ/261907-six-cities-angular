@@ -18,15 +18,16 @@ export class MainComponent {
   public offers = offers;
   public className = CardClass.Cities;
   public mapClass = MapClass.Cities;
+  public enteredOffer = '';
 
   readonly highlightMapEvent = output<string>();
   readonly resetMapEvent = output<void>();
 
   highlightMap(offerId: string) {
-    console.log(offerId);
+    this.enteredOffer = offerId;
   }
 
   resetMap() {
-    console.log('okay');
+    this.enteredOffer = '';
   }
 }

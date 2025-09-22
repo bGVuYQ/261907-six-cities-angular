@@ -14,7 +14,7 @@
           <app-city-offers [offers]="offers" [className]="className" (highlightMapEvent)="highlightMap($event)" (resetMapEvent)="resetMap()" />
         }
         <div class="right-section">
-          <app-map [className]="mapClass"/>
+          <app-map [className]="mapClass" [offers]="offers" [enteredOffer]="enteredOffer" />
         </div>
       </div>
     </div>
