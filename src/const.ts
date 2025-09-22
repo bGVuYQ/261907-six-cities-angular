@@ -8,6 +8,10 @@ export const MAX_RATING = 5;
 
 export const MAX_REVIEWS_TO_RENDER = 10;
 
+export const URL_MARKER = '/img/pin.svg';
+
+export const URL_MARKER_ACTIVE = '/img/pin-active.svg';
+
 export enum AppRoute {
   Main = '',
   Login = 'login',

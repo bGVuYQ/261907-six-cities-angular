@@ -35,8 +35,6 @@ export class OfferComponent {
     if (this.currentOffer) {
       this.images = this.currentOffer?.images.slice(0, MAX_IMAGES_TO_RENDER_IN_OFFER);
     }
-
-    console.log(this.currentOffer);
   }
 
   applyRatingStyle(rating: number) {

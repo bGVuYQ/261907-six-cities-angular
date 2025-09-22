@@ -40,3 +40,5 @@ export interface LocationWithOffers {
   name: string;
   offers: Offer[];
 }
+
+export type OfferLocationInfo = Pick<Offer, 'id' | 'city' | 'location'>;
