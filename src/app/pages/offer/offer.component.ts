@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MAX_IMAGES_TO_RENDER_IN_OFFER, MAX_RATING, MAX_REVIEWS_TO_RENDER, BookMarkButtonClass, CardClass, MapClass, MAX_NEAR_PLACES_TO_RENDER } from '../../../const';
+import { TitleCasePipe } from '@angular/common';
+import { MAX_IMAGES_TO_RENDER_IN_OFFER, MAX_REVIEWS_TO_RENDER, BookMarkButtonClass, CardClass, MapClass, MAX_NEAR_PLACES_TO_RENDER } from '../../../const';
+import { ApplyRatingStylePipe } from '../../pipes/apply-rating-style.pipe';
 import { offers } from '../../mocks/offers';
 import { reviews } from '../../mocks/reviews';
 import { HeaderComponent } from '../../common/header/header.component';
@@ -12,7 +14,7 @@ import { OffersListComponent } from '../../common/offers-list/offers-list.compon
 
 @Component({
   selector: 'app-offer',
-  imports: [HeaderComponent, BookmarkButtonComponent, ReviewsListComponent, CommentFormComponent, MapComponent, OffersListComponent],
+  imports: [ApplyRatingStylePipe, TitleCasePipe, HeaderComponent, BookmarkButtonComponent, ReviewsListComponent, CommentFormComponent, MapComponent, OffersListComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './offer.component.html',
   styleUrl: './offer.component.css'
@@ -35,13 +37,5 @@ export class OfferComponent {
     if (this.currentOffer) {
       this.images = this.currentOffer?.images.slice(0, MAX_IMAGES_TO_RENDER_IN_OFFER);
     }
-  }
-
-  applyRatingStyle(rating: number) {
-    return `width: ${100 / MAX_RATING * Math.round(rating)}%`;
-  }
-
-  capitalize(word: string) {
-    return `${word.charAt(0).toUpperCase()}${word.slice(1).toLowerCase()}`;
   }
 }

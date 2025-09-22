@@ -1,12 +1,14 @@
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { MAX_RATING, AppRoute, BookMarkButtonClass, CardClass } from '../../../const';
+import { TitleCasePipe } from '@angular/common';
+import { AppRoute, BookMarkButtonClass, CardClass } from '../../../const';
 import { Offer } from '../../types/offer';
+import { ApplyRatingStylePipe } from '../../pipes/apply-rating-style.pipe';
 import { BookmarkButtonComponent } from '../bookmark-button/bookmark-button.component';
 
 @Component({
   selector: 'app-offer-card',
-  imports: [RouterLink, BookmarkButtonComponent],
+  imports: [ApplyRatingStylePipe, RouterLink, BookmarkButtonComponent, TitleCasePipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './offer-card.component.html',
   styleUrl: './offer-card.component.css'
@@ -26,14 +28,6 @@ export class OfferCardComponent {
       width: this.isFavorite() ? 150 : 260,
       height: this.isFavorite() ? 110 : 200
     }
-  }
-
-  applyRatingStyle(rating: number) {
-    return `width: ${100 / MAX_RATING * Math.round(rating)}%`;
-  }
-
-  capitalize(word: string) {
-    return `${word.charAt(0).toUpperCase()}${word.slice(1).toLowerCase()}`;
   }
 
   highlightMap() {

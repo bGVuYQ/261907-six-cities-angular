@@ -1,9 +1,11 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { MAX_RATING } from '../../../../const';
+import { DatePipe } from '@angular/common';
 import { Review } from '../../../types/review';
+import { ApplyRatingStylePipe } from '../../../pipes/apply-rating-style.pipe';
 
 @Component({
   selector: 'app-review-card',
+  imports: [DatePipe, ApplyRatingStylePipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './review-card.component.html',
   styleUrl: './review-card.component.css'
@@ -11,18 +13,4 @@ import { Review } from '../../../types/review';
 
 export class ReviewCardComponent {
   public review = input.required<Review>();
-
-  applyRatingStyle(rating: number) {
-    return `width: ${100 / MAX_RATING * Math.round(rating)}%`;
-  }
-
-  formatDate(date: string) {
-    return new Date(date).toLocaleString(
-      'en-US',
-      {
-        month: 'long',
-        year: 'numeric'
-      }
-    );
-  }
 }

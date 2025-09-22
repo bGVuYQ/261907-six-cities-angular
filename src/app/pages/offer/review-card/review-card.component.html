@@ -8,11 +8,11 @@
   <div class="info">
     <div class="rating">
       <div class="stars">
-        <span [style]="applyRatingStyle(review().rating)"></span>
+        <span [style]="review().rating | applyRatingStyle"></span>
         <span class="visually-hidden">Rating</span>
       </div>
     </div>
     <p>{{ review().comment }}</p>
-    <time [dateTime]="review().date">{{ formatDate(review().date) }}</time>
+    <time [dateTime]="review().date">{{ review().date | date:'MMMM YYYY' }}</time>
   </div>
 </li>

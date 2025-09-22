@@ -26,13 +26,13 @@
             </div>
             <div class="rating">
               <div class="stars">
-                <span [style]="applyRatingStyle(this.currentOffer.rating)"></span>
+                <span [style]="this.currentOffer.rating | applyRatingStyle"></span>
                 <span class="visually-hidden">Rating</span>
               </div>
               <span class="value">{{ this.currentOffer.rating }}</span>
             </div>
             <ul class="features">
-              <li class="entire">{{ capitalize(this.currentOffer.type) }}</li>
+              <li class="entire">{{ this.currentOffer.type | titlecase }}</li>
               <li class="bedrooms">{{ this.currentOffer.bedrooms }} Bedrooms</li>
               <li class="adults">Max {{ this.currentOffer.maxAdults }} adults</li>
             </ul>

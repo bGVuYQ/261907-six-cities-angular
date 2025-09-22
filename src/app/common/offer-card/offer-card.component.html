@@ -19,13 +19,13 @@
     </div>
     <div class="rating">
       <div class="stars">
-        <span [style]="applyRatingStyle(offer().rating)"></span>
+        <span [style]="offer().rating | applyRatingStyle"></span>
         <span class="visually-hidden">Rating</span>
       </div>
     </div>
     <h2>
       <a [routerLink]="[routeToOffer, offer().id]">{{ offer().title }}</a>
     </h2>
-    <p>{{ capitalize(offer().type) }}</p>
+    <p>{{ offer().type | titlecase}}</p>
   </div>
 </article>
